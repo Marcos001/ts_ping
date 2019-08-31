@@ -6,7 +6,10 @@ Série Temporal feita com o tempo de resposta com comando `ping`.
 
 Os dados são obtidos com o comando `ping` e escritos em uma arquivo de *log*. Os Parâmetros em negrito devem ser inseridos.
 
-* ping **IP** -c **SIZE** | xargs -n1 -i bash -c 'echo `date +"%Y-%m-%d %H:%M:%S"`" {}"' >> "**FILE**.log"
+```console
+* ping "IP" -c "SIZE" | xargs -n1 -i bash -c 'echo `date +"%Y-%m-%d %H:%M:%S"`" {}"' >> "FILE.log"
+```
+
 
 ```console
 2018-12-05 12:38:45 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
