@@ -16,6 +16,7 @@ rm $FILE
 echo "running ping..." 
 ping $IP -c $SIZE | xargs -n1 -i bash -c 'echo `date +"%Y-%m-%d %H:%M:%S"`" {}"' >> $FILE
 
+#echo "create file log"
 #FILE = read -p "Digite o nome do arquivo de log: "
 
 # if [ $# -le 0 ]; then
@@ -30,7 +31,7 @@ echo "time,pack" > data_ping.csv
 #cat FILE.log | awk '{ print $1 " " $2 " " $7 }' | grep -w "icmp_seq" | sed -e 's/icmp_seq=//'
 #cat $FILE | awk '{ print $1 " " $2 " " $7 }' | grep -w "icmp_seq" | sed -e 's/icmp_seq=//'
 
-cat $FILE | awk '{ print $2 " " $9 }' | grep -w "time" | sed -e 's/time=//' >> data_ping.csv
+cat $FILE | awk '{ print $2 " " $9 }' | grep -w "tempo" | sed -e 's/tempo=//' >> data_ping.csv
 sed -i -e 's/ /,/' data_ping.csv
 
 python main.py
